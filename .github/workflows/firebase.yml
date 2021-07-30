@@ -1,4 +1,4 @@
-name: Build and deploy
+name: Firebase build & deploy
 
 on:
   push:
@@ -28,8 +28,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@master
+      # - name: Checkout repository
+      #   uses: actions/checkout@master
       - name: Download artifact
         uses: actions/download-artifact@master
         with:
