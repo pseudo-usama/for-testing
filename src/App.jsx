@@ -1,7 +1,7 @@
 function App() {
-  return (
-    <p>Here is my code.</p>
-  )
+    return (
+        <p>This is my test project.</p>
+    )
 }
 
 export default App
