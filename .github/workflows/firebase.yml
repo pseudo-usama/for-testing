@@ -23,7 +23,7 @@ jobs:
         with:
           name: build
           path: build
-  ladskfjlasdkfj:
+  deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
