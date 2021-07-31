@@ -3,7 +3,7 @@ const app = express()
 
 
 app.all('*', (req, res) => {
-    res.send('ksdalfjklasjfksadfjkldsfj')
+    res.send('Hello world!')
 })
 
 
