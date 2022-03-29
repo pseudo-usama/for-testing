@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+function countWordAccurance(line) {
+    const wordCounts = {}
+    const words = line.split(" ")
+
+    for (let i = 0; i < words.length; i++) {
+        let currentWordCount = wordCounts[words[i]]
+        let count = currentWordCount ? currentWordCount : 0
+        wordCounts[words[i]] = count + 1
+    }
+
+    return wordCounts
+}
+
+function removeUndeplicated(wordCounts) {
+    const duplicates = []
+    for (let key in wordCounts) {
+        if (wordCounts[key] > 1)
+            duplicates.push(key)
+    }
+    return duplicates
+}
+
+const line = "Abdullah I am Abdullah"
+
+// First we'll find the count for all words
+wordCounts = countWordAccurance(line)
+// Now we remove those with no duplicates
+duplicated = removeUndeplicated(wordCounts)
+console.log(duplicated)
+    </script>
+</body>
+
+</html>

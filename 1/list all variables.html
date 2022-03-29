@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        View the list of all variables in Google
+        Chrome Console in JavaScript
+    </title>
+</head>
+  
+<body>
+    <h1 style="color: green">
+        GeeksforGeeks
+    </h1>
+      
+    <b>
+        View list of all JavaScript variables
+        in Google Chrome Console
+    </b>
+      
+    <p>
+        Click on the button to view list
+        of all JavaScript variables in 
+        the Google Chrome Console
+    </p>
+      
+    <button onclick="findAllVariables()">
+        Click here
+    </button>
+      
+    <script type="text/javascript">
+        (function findAllVariables() {
+            let variables = Object.keys(window);
+            console.log(JSON.stringify(variables));
+        })()
+    </script>
+</body>
+  
+</html>

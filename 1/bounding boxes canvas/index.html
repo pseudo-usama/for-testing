@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.min.js"></script>
+    <style>
+        asdf {
+            color: #c5c5c5;
+        }
+
+        #canvas-div {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas-div">
+        <canvas id="canvas" height="400" width="400"></canvas>
+    </div>
+
+    <script>
+        const CANVAS_WIDTH = window.innerWidth * 0.9
+        const CANVAS_HEIGHT = 700
+        let imageObj
+        let objectsScaleFactor
+
+        let canvas = new fabric.StaticCanvas('canvas', {
+            backgroundColor: '#c5c5c5',
+            width: CANVAS_WIDTH,
+            height: CANVAS_HEIGHT
+        });
+
+        fabric.Image.fromURL('img.jpg', function (img) {
+            objectsScaleFactor = Math.min(
+                CANVAS_WIDTH / img.width,
+                CANVAS_HEIGHT / img.height
+            )
+            let img1 = img.set({
+                opacity: 0.5,
+                left: 0,
+                top: 0,
+                scaleX: objectsScaleFactor,
+                scaleY: objectsScaleFactor
+            });
+            canvas.add(img1);
+            imageObj = img
+        })
+
+        const boundingBoxes =  [ { left: 1076, top: 424, width: 136, height: 84, }, { left: 1260, top: 432, width: 43, height: 63, }, { left: 1338, top: 428, width: 325, height: 67, }, { left: 1527, top: 424, width: 140, height: 84, }, { left: 55, top: 1128, width: 124, height: 85, }, { left: 221, top: 1128, width: 225, height: 85, }, { left: 483, top: 1128, width: 211, height: 85, }, { left: 752, top: 1133, width: 157, height: 66, }, { left: 1754, top: 1207, width: 67, height: 52, }, { left: 1127, top: 1287, width: 126, height: 58, }, { left: 1358, top: 1170, width: 304, height: 180, }, { left: 1694, top: 1214, width: 103, height: 87, }, { left: 1798, top: 1213, width: 139, height: 101, }, ]
+
+        setTimeout(() => {
+            boundingBoxes.forEach((bb, i) => {
+                let rect = new fabric.Rect({
+                    top: bb['top'] * objectsScaleFactor,
+                    left: bb['left'] * objectsScaleFactor,
+                    width: bb['width'] * objectsScaleFactor,
+                    height: bb['height'] * objectsScaleFactor,
+
+                    fill: 'transparent',
+                    stroke: 'black',
+                    strokeWidth: 2,
+                })
+                if (i != -1) {
+                    canvas.add(rect)
+
+                    console.log({
+                        top: [bb['top'] * objectsScaleFactor, bb['top']],
+                        left: [bb['left'] * objectsScaleFactor, bb['left']],
+                        width: [bb['width'] * objectsScaleFactor, bb['width']],
+                        height: [bb['height'] * objectsScaleFactor, bb['height']],
+                    })
+                }
+            })
+        }, 500);
+    </script>
+</body>
+
+</html>

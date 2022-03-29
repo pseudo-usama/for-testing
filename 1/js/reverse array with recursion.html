@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+function reverseArr(toBeReversed) {
+    var finalArr = [];
+
+    reverse = arr => {
+        if (arr.length < 1)
+            return
+
+        finalArr.push(arr.pop());
+        reverse(arr);
+    }
+
+    reverse(toBeReversed);
+    return finalArr;
+}
+
+const arr = [1, 2, 3, 4, 5, 'a', { a: 10 }]
+console.log(reverseArr(arr))
+    </script>
+</body>
+
+</html>

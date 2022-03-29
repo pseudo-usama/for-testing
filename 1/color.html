@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #my-div {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="my-div"></div>
+
+    <script>
+        const DIV = document.getElementById('my-div')
+        function setclr(clr) {
+            DIV.style.background = clr
+        }
+        function getclr() {
+            return DIV.style.background
+        }
+    </script>
+
+    <script>
+        setclr('red')
+
+        setInterval(() => {
+            for (let i = 0; i < 5; i++) {
+                if (getclr() == 'red') setclr('green')
+                else/****************/ setclr('red')
+            }
+        }, 1);
+    </script>
+</body>
+
+</html>

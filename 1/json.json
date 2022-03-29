@@ -1,0 +1,141 @@
+{
+    "42": {
+        "10": {
+            "8": {
+                "sbb": [
+                    {
+                        "topLeft": [
+                            1076,
+                            424
+                        ],
+                        "dimensions": [
+                            136,
+                            84
+                        ],
+                        "text": "This",
+                        "conf": 96,
+                        "distance": [
+                            912,
+                            187
+                        ]
+                    },
+                    {
+                        "topLeft": [
+                            1260,
+                            432
+                        ],
+                        "dimensions": [
+                            43,
+                            63
+                        ],
+                        "text": "is",
+                        "conf": 96,
+                        "distance": [
+                            1096,
+                            195
+                        ]
+                    },
+                    {
+                        "topLeft": [
+                            1338,
+                            428
+                        ],
+                        "dimensions": [
+                            325,
+                            67
+                        ],
+                        "text": "first",
+                        "conf": 96,
+                        "distance": [
+                            1174,
+                            191
+                        ]
+                    },
+                    {
+                        "topLeft": [
+                            1527,
+                            424
+                        ],
+                        "dimensions": [
+                            140,
+                            84
+                        ],
+                        "text": "text",
+                        "conf": 96,
+                        "distance": [
+                            1363,
+                            187
+                        ]
+                    }
+                ],
+                "dbb": [
+                    {
+                        "topLeft": [
+                            55,
+                            1128
+                        ],
+                        "dimensions": [
+                            124,
+                            85
+                        ],
+                        "text": "And",
+                        "conf": 96,
+                        "distance": [
+                            -109,
+                            891
+                        ]
+                    },
+                    {
+                        "topLeft": [
+                            221,
+                            1128
+                        ],
+                        "dimensions": [
+                            225,
+                            85
+                        ],
+                        "text": "that's",
+                        "conf": 96,
+                        "distance": [
+                            57,
+                            891
+                        ]
+                    },
+                    {
+                        "topLeft": [
+                            483,
+                            1128
+                        ],
+                        "dimensions": [
+                            211,
+                            85
+                        ],
+                        "text": "second",
+                        "conf": 96,
+                        "distance": [
+                            319,
+                            891
+                        ]
+                    },
+                    {
+                        "topLeft": [
+                            752,
+                            1133
+                        ],
+                        "dimensions": [
+                            157,
+                            66
+                        ],
+                        "text": "line",
+                        "conf": 96,
+                        "distance": [
+                            588,
+                            896
+                        ]
+                    }
+                ],
+                "ubb": []
+            }
+        }
+    }
+}
