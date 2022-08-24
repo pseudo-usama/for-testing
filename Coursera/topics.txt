@@ -1,0 +1,16 @@
+RCNN
+Fast RCNN
+Faster RCNN
+Single Shot Detector (SSDs)
+landmark localization
+Region proposal 
+UNet
+semantic segmentation
+face recognition
+neural style transfer
+
+
+others
+hog feature extraction
+lbp feature extraction
+

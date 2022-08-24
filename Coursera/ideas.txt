@@ -1,0 +1,2 @@
+why not use RNN in videos
+why not use RNN in object detection of multiple objects
