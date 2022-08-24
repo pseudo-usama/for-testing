@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+</head>
+
+<body>
+  <h1>Signup</h1>
+  <form action="/signup" method="post">
+    <div>
+      <input type="text" name="username" placeholder="username" required />
+    </div>
+    <div>
+      <input type="password" name="password" placeholder="password" required />
+    </div>
+    <div>
+      <input type="radio" name="role" value="admin" id="admin" required />
+      <label for="admin">Admin</label>&nbsp;
+      <input type="radio" name="role" value="seller" id="seller" required />
+      <label for="seller">Seller</label>&nbsp;
+      <input type="radio" name="role" value="customer" id="customer" required />
+      <label for="customer">Customer</label>
+    </div>
+    <div>
+      <input type="submit" />
+    </div>
+  </form>
+
+  <p>Or <a href="/login">login</a></p>
+</body>
+
+</html>

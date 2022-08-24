@@ -1,0 +1,27 @@
+.lemon-network {
+  position: relative;
+}
+
+.lemon-network::after,
+.lemon-network::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-size: cover;
+}
+
+.lemon-network::after {
+  width: 200px;
+  height: 200px;
+  top: -10%;
+  left: 23%;
+  background-image: url(../images/blobs/3.svg);
+}
+
+.lemon-network::before {
+  width: 200px;
+  height: 200px;
+  right: -7%;
+  bottom: -10%;
+  background-image: url(../images/blobs/4.svg);
+}

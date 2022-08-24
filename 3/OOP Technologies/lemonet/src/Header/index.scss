@@ -1,0 +1,41 @@
+.header::after {
+  background-image: url(../images/blobs/1.svg);
+  top: 15%;
+  left: 10%;
+}
+
+.header::before {
+  background-image: url(../images/blobs/2.svg);
+  bottom: 15%;
+  right: 10%;
+}
+
+.header::after,
+.header::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+}
+
+.curved-div {
+  height: 400px;
+  width: 100%;
+  transform: translateY(-100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.curved-div:nth-of-type(1) {
+  background-image: url(../images/curved-borders/1.svg);
+}
+
+.curved-div:nth-of-type(2) {
+  background-image: url(../images/curved-borders/2.svg);
+}
+
+.curved-div:nth-of-type(3) {
+  background-image: url(../images/curved-borders/3.svg);
+}
