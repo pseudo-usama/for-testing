@@ -1,0 +1,668 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     29652,        660]
+NotebookOptionsPosition[     27701,        614]
+NotebookOutlinePosition[     28214,        633]
+CellTagsIndexPosition[     28171,        630]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Multivariable function slicing", "Title",
+ CellChangeTimes->{{3.8252114631332936`*^9, 
+  3.825211497696365*^9}},ExpressionUUID->"23c09463-3e50-4c9e-82cd-\
+b68731f513f7"],
+
+Cell[CellGroupData[{
+
+Cell["Functions", "Section",
+ CellChangeTimes->{{3.825211662813962*^9, 3.8252116668421135`*^9}, 
+   3.8252126635403967`*^9, {3.825218776635871*^9, 
+   3.825218788174819*^9}},ExpressionUUID->"cf54bf30-1e8f-4f08-ac17-\
+cd00e123c1f8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], 
+    RowBox[{"Sin", "[", "y", "]"}]}], "+", 
+   RowBox[{"x", " ", "y"}]}]}]], "Input",
+ CellChangeTimes->{{3.8250557298272896`*^9, 3.8250557725308285`*^9}, 
+   3.8250561519897437`*^9, {3.8250566610534983`*^9, 3.825056662541679*^9}, {
+   3.8250571210834274`*^9, 3.8250571498784013`*^9}, {3.825064510990511*^9, 
+   3.8250645223800783`*^9}, {3.825212601054722*^9, 3.82521265717071*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"fc204012-06c4-4581-9986-dd13edc6527d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FPartialX", "=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8252201398861485`*^9, 3.8252201460711346`*^9}, 
+   3.825338070287162*^9, {3.825338782742262*^9, 3.825338782802968*^9}, {
+   3.825338815808226*^9, 3.825338820118782*^9}, {3.8253388560466604`*^9, 
+   3.8253388666131554`*^9}, 3.8253389537088375`*^9, {3.82537409880471*^9, 
+   3.8253741010068073`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"b5bc4b08-035d-42fb-b017-bf0b92838395"],
+
+Cell[BoxData[
+ RowBox[{"y", "+", 
+  RowBox[{"2", " ", "x", " ", 
+   RowBox[{"Sin", "[", "y", "]"}]}]}]], "Output",
+ CellChangeTimes->{3.8253389541545553`*^9, 3.8253741019818773`*^9, 
+  3.8253800297135096`*^9, 3.8253877203805623`*^9, 3.825388712284334*^9, 
+  3.8253965371170645`*^9, 3.825402863428767*^9, 3.8270213517022038`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"8229a510-4726-4771-b033-7ef78d31ba3c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FPartialXY", "=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", "x", ",", "y"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.825339162093399*^9, 3.8253391658331738`*^9}, {
+   3.8253393494746532`*^9, 3.82533937174867*^9}, 3.825339432011275*^9, {
+   3.825339463196963*^9, 3.8253394634423475`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"a25d0948-c8f3-44cd-8e3a-9c3f18d9e0b5"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{"2", " ", "x", " ", 
+   RowBox[{"Cos", "[", "y", "]"}]}]}]], "Output",
+ CellChangeTimes->{
+  3.8253393729502153`*^9, {3.825339456385213*^9, 3.8253394642390814`*^9}, 
+   3.8253741041038074`*^9, 3.82538003069279*^9, 3.8253877228379903`*^9, 
+   3.8253887133002863`*^9, 3.8253965373997154`*^9, 3.8254028641453314`*^9, 
+   3.827021352399827*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"7b07e806-3a9a-40f9-ba8f-c5b2126332d0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FPartialY", "=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", "y"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8253743845377913`*^9, 3.8253744010232105`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"fda4ea9c-2d0f-4b58-ad42-26d5c91dd6c6"],
+
+Cell[BoxData[
+ RowBox[{"x", "+", 
+  RowBox[{
+   SuperscriptBox["x", "2"], " ", 
+   RowBox[{"Cos", "[", "y", "]"}]}]}]], "Output",
+ CellChangeTimes->{
+  3.825374402313785*^9, 3.825380031772048*^9, 3.8253877238645954`*^9, 
+   3.8253887163219995`*^9, 3.825396540661318*^9, 3.8254028648089924`*^9, {
+   3.827021348162266*^9, 3.8270213531685095`*^9}},
+ CellLabel->"Out[5]=",ExpressionUUID->"fee6e5e4-2ea4-4bb4-830c-051d80e4ed48"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FPartialYX", "=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", "y", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8253744053063107`*^9, 3.8253744253042707`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"92f15e01-a166-4095-ad89-68da2716af83"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{"2", " ", "x", " ", 
+   RowBox[{"Cos", "[", "y", "]"}]}]}]], "Output",
+ CellChangeTimes->{3.825374426183015*^9, 3.8253800329458714`*^9, 
+  3.8253877250222974`*^9, 3.8253887165080905`*^9, 3.8253965408392715`*^9, 
+  3.825402865567049*^9, 3.8270213538903694`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"7955ef49-eedc-478b-a083-54ce91cf8cb4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Graphing", "Section",
+ CellChangeTimes->{{3.825216792318865*^9, 3.825216794777912*^9}, {
+  3.8252176198666267`*^9, 
+  3.825217622871281*^9}},ExpressionUUID->"dd1fbf42-19ba-4dbb-9af2-\
+be8fe85deb76"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Magnify", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"XorY", "==", "\"\<y=c\>\""}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Grid", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Plot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"f", "[", 
+                 RowBox[{"x", ",", "y"}], "]"}], "/.", 
+                RowBox[{"y", "\[Rule]", "c"}]}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", 
+                 RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+               RowBox[{"PlotRange", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "150"}], ",", "150"}], "}"}]}], ",", " ", 
+               RowBox[{"AxesLabel", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<x\>\"", ",", " ", "\"\<z\>\""}], "}"}]}], ",", 
+               RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", " ", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Plot3D", "[", 
+              RowBox[{
+               RowBox[{"f", "[", 
+                RowBox[{"x", ",", "y"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", 
+                 RowBox[{"-", "10.1"}], ",", "10.1"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"y", ",", 
+                 RowBox[{"-", "10.1"}], ",", "10.1"}], "}"}], ",", 
+               RowBox[{"Mesh", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"-", "11"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"c", ",", "Thick"}], "}"}], "}"}]}], "}"}]}], ",", 
+               RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", " ", 
+               RowBox[{"ColorFunction", "\[Rule]", "\"\<DarkRainbow\>\""}], 
+               ",", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}]}], 
+            "\[IndentingNewLine]", "}"}], ",", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Row", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Plot", "[", 
+                 RowBox[{
+                  RowBox[{"FPartialX", "/.", 
+                   RowBox[{"y", "\[Rule]", "c"}]}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<x\>\"", ",", "\"\<z\>\""}], "}"}]}], ",", 
+                  RowBox[{"PlotRange", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "25"}], ",", "25"}], "}"}]}], ",", 
+                  RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", " ", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Plot3D", "[", 
+                 RowBox[{"FPartialX", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"y", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", 
+                  RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+                  RowBox[{"ColorFunction", "\[Rule]", "\"\<DarkRainbow\>\""}],
+                   ",", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}]}], 
+               "\[IndentingNewLine]", "}"}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Row", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Plot", "[", 
+                 RowBox[{
+                  RowBox[{"FPartialXY", "/.", 
+                   RowBox[{"y", "\[Rule]", "c"}]}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<x\>\"", ",", "\"\<z\>\""}], "}"}]}], ",", 
+                  RowBox[{"PlotRange", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "20"}], ",", "20"}], "}"}]}], ",", 
+                  RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", " ", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Plot3D", "[", 
+                 RowBox[{"FPartialXY", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"y", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", 
+                  RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+                  RowBox[{"ColorFunction", "\[Rule]", "\"\<DarkRainbow\>\""}],
+                   ",", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}]}], 
+               "\[IndentingNewLine]", "}"}], "]"}]}], "\[IndentingNewLine]", 
+            "}"}]}], "}"}], ",", 
+         RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Grid", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Plot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"f", "[", 
+                 RowBox[{"x", ",", "y"}], "]"}], "/.", 
+                RowBox[{"x", "\[Rule]", "c"}]}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"y", ",", 
+                 RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+               RowBox[{"PlotRange", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "150"}], ",", "150"}], "}"}]}], ",", " ", 
+               RowBox[{"AxesLabel", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<y\>\"", ",", " ", "\"\<z\>\""}], "}"}]}], ",", 
+               RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", " ", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Plot3D", "[", 
+              RowBox[{
+               RowBox[{"f", "[", 
+                RowBox[{"x", ",", "y"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", 
+                 RowBox[{"-", "10.1"}], ",", "10.1"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"y", ",", 
+                 RowBox[{"-", "10.1"}], ",", "10.1"}], "}"}], ",", 
+               RowBox[{"Mesh", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{"c", ",", "Thick"}], "}"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"-", "11"}], "}"}]}], "}"}]}], ",", 
+               RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", " ", 
+               RowBox[{"ColorFunction", "\[Rule]", "\"\<DarkRainbow\>\""}], 
+               ",", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}]}], 
+            "\[IndentingNewLine]", "}"}], ",", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Row", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Plot", "[", 
+                 RowBox[{
+                  RowBox[{"FPartialY", "/.", 
+                   RowBox[{"x", "\[Rule]", "c"}]}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"y", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<y\>\"", ",", "\"\<z\>\""}], "}"}]}], ",", 
+                  RowBox[{"PlotRange", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "110"}], ",", "110"}], "}"}]}], ",", 
+                  RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", " ", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Plot3D", "[", 
+                 RowBox[{"FPartialY", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"y", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", 
+                  RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+                  RowBox[{"ColorFunction", "\[Rule]", "\"\<DarkRainbow\>\""}],
+                   ",", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}]}], 
+               "\[IndentingNewLine]", "}"}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Row", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Plot", "[", 
+                 RowBox[{
+                  RowBox[{"FPartialYX", "/.", 
+                   RowBox[{"x", "\[Rule]", "c"}]}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"y", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<y\>\"", ",", "\"\<z\>\""}], "}"}]}], ",", 
+                  RowBox[{"PlotRange", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "25"}], ",", "25"}], "}"}]}], ",", 
+                  RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", " ", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Plot3D", "[", 
+                 RowBox[{"FPartialYX", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"y", ",", 
+                    RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                  RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", 
+                  RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+                  RowBox[{"ColorFunction", "\[Rule]", "\"\<DarkRainbow\>\""}],
+                   ",", 
+                  RowBox[{"ImageSize", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"275", ",", "275"}], "}"}]}]}], "]"}]}], 
+               "\[IndentingNewLine]", "}"}], "]"}]}], "\[IndentingNewLine]", 
+            "}"}]}], "}"}], ",", 
+         RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", ",", "1.2"}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"XorY", ",", " ", "\"\<y=c\>\"", ",", "\"\<Constent:\>\""}], 
+      "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x=c\>\"", ",", "\"\<y=c\>\""}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "Setter"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "0", ",", "\"\<c\>\""}], "}"}], ",", 
+     RowBox[{"-", "10"}], ",", "10", ",", " ", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.825216830584697*^9, 3.8252168746765985`*^9}, {
+   3.8252170186943483`*^9, 3.825217075167862*^9}, {3.8252173316989*^9, 
+   3.8252174362971325`*^9}, {3.8252174759106693`*^9, 3.825217588770303*^9}, {
+   3.8252176339311047`*^9, 3.8252177305435305`*^9}, {3.8252177773351774`*^9, 
+   3.8252177785050125`*^9}, {3.8252196601214094`*^9, 
+   3.8252198562860875`*^9}, {3.825219902512286*^9, 3.825219903044397*^9}, {
+   3.825220010340965*^9, 3.8252200127981095`*^9}, {3.8252201494532223`*^9, 
+   3.8252201517616*^9}, 3.8252206682391005`*^9, {3.8252210040519657`*^9, 
+   3.825221070844897*^9}, 3.8252212318832383`*^9, {3.825221282575783*^9, 
+   3.825221300261125*^9}, {3.82522171730669*^9, 3.825221736817059*^9}, 
+   3.8252219448183603`*^9, {3.825221982235821*^9, 3.825222016067025*^9}, 
+   3.8253191635355487`*^9, {3.825338438248025*^9, 3.825338467331889*^9}, {
+   3.825339183752575*^9, 3.825339226930831*^9}, {3.8253393243812785`*^9, 
+   3.8253393278342857`*^9}, {3.8253394853806*^9, 3.8253394872724924`*^9}, {
+   3.8253395908898497`*^9, 3.825339631871866*^9}, {3.82533969480882*^9, 
+   3.8253397181851006`*^9}, {3.8253399253893223`*^9, 3.825339926991995*^9}, {
+   3.8253742959209104`*^9, 3.8253743001505117`*^9}, 3.825374371940203*^9, {
+   3.8253744302958775`*^9, 3.8253744554704123`*^9}, {3.8253753580651007`*^9, 
+   3.8253753707678027`*^9}, {3.825375557301926*^9, 3.825375567273703*^9}, {
+   3.825375665172533*^9, 3.8253756670336695`*^9}, {3.8253773588912473`*^9, 
+   3.825377379869671*^9}, {3.825377414820739*^9, 3.8253774693771715`*^9}, {
+   3.8253775110192833`*^9, 3.825377536793544*^9}, {3.8253781776535225`*^9, 
+   3.825378348925329*^9}, {3.825378398692981*^9, 3.8253784373290377`*^9}, {
+   3.8253788238803964`*^9, 3.825378825811065*^9}, {3.825378930811162*^9, 
+   3.8253789418888545`*^9}, {3.825379002890579*^9, 3.825379042712757*^9}, {
+   3.825387755584857*^9, 3.8253879003324337`*^9}, {3.8253880075703306`*^9, 
+   3.825388019035865*^9}, {3.8253882001892514`*^9, 3.8253882072050667`*^9}, {
+   3.825388254961309*^9, 3.825388255954852*^9}, 3.8253882930570874`*^9, {
+   3.8253883752829475`*^9, 3.8253883877893887`*^9}, {3.8253885754754715`*^9, 
+   3.8253885990675087`*^9}, {3.8254028823681617`*^9, 3.825402912057584*^9}, {
+   3.82540327452092*^9, 3.825403324458228*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"d0697673-ec4d-4073-a6e0-bc4f37052e49"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`c$$ = 0, $CellContext`XorY$$ = "y=c", 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`XorY$$], "y=c", "Constent:"}, {"x=c", "y=c"}}, {{
+       Hold[$CellContext`c$$], 0, "c"}, -10, 10}}, Typeset`size$$ = {
+    1480., {367.5, 375.5}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`c$$ = 0, $CellContext`XorY$$ = "y=c"}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Magnify[
+        If[$CellContext`XorY$$ == "y=c", 
+         Grid[{{
+            Plot[
+             ReplaceAll[
+              $CellContext`f[$CellContext`x, $CellContext`y], $CellContext`y -> \
+$CellContext`c$$], {$CellContext`x, -10, 10}, PlotRange -> {-150, 150}, 
+             AxesLabel -> {"x", "z"}, PlotStyle -> Thick, 
+             ImageSize -> {275, 275}], 
+            Plot3D[
+             $CellContext`f[$CellContext`x, $CellContext`y], {$CellContext`x, \
+-10.1, 10.1}, {$CellContext`y, -10.1, 10.1}, 
+             Mesh -> {{-11}, {{$CellContext`c$$, Thick}}}, AxesLabel -> 
+             Automatic, ColorFunction -> "DarkRainbow", 
+             ImageSize -> {275, 275}]}, {
+            Row[{
+              Plot[
+               
+               ReplaceAll[$CellContext`FPartialX, $CellContext`y -> \
+$CellContext`c$$], {$CellContext`x, -10, 10}, AxesLabel -> {"x", "z"}, 
+               PlotRange -> {-25, 25}, PlotStyle -> Thick, 
+               ImageSize -> {275, 275}], 
+              
+              Plot3D[$CellContext`FPartialX, {$CellContext`x, -10, 
+                10}, {$CellContext`y, -10, 10}, AxesLabel -> Automatic, Mesh -> 
+               None, ColorFunction -> "DarkRainbow", 
+               ImageSize -> {275, 275}]}], 
+            Row[{
+              Plot[
+               
+               ReplaceAll[$CellContext`FPartialXY, $CellContext`y -> \
+$CellContext`c$$], {$CellContext`x, -10, 10}, AxesLabel -> {"x", "z"}, 
+               PlotRange -> {-20, 20}, PlotStyle -> Thick, 
+               ImageSize -> {275, 275}], 
+              
+              Plot3D[$CellContext`FPartialXY, {$CellContext`x, -10, 
+                10}, {$CellContext`y, -10, 10}, AxesLabel -> Automatic, Mesh -> 
+               None, ColorFunction -> "DarkRainbow", 
+               ImageSize -> {275, 275}]}]}}, Frame -> All], 
+         Grid[{{
+            Plot[
+             ReplaceAll[
+              $CellContext`f[$CellContext`x, $CellContext`y], $CellContext`x -> \
+$CellContext`c$$], {$CellContext`y, -10, 10}, PlotRange -> {-150, 150}, 
+             AxesLabel -> {"y", "z"}, PlotStyle -> Thick, 
+             ImageSize -> {275, 275}], 
+            Plot3D[
+             $CellContext`f[$CellContext`x, $CellContext`y], {$CellContext`x, \
+-10.1, 10.1}, {$CellContext`y, -10.1, 10.1}, 
+             Mesh -> {{{$CellContext`c$$, Thick}}, {-11}}, AxesLabel -> 
+             Automatic, ColorFunction -> "DarkRainbow", 
+             ImageSize -> {275, 275}]}, {
+            Row[{
+              Plot[
+               
+               ReplaceAll[$CellContext`FPartialY, $CellContext`x -> \
+$CellContext`c$$], {$CellContext`y, -10, 10}, AxesLabel -> {"y", "z"}, 
+               PlotRange -> {-110, 110}, PlotStyle -> Thick, 
+               ImageSize -> {275, 275}], 
+              
+              Plot3D[$CellContext`FPartialY, {$CellContext`x, -10, 
+                10}, {$CellContext`y, -10, 10}, AxesLabel -> Automatic, Mesh -> 
+               None, ColorFunction -> "DarkRainbow", 
+               ImageSize -> {275, 275}]}], 
+            Row[{
+              Plot[
+               
+               ReplaceAll[$CellContext`FPartialYX, $CellContext`x -> \
+$CellContext`c$$], {$CellContext`y, -10, 10}, AxesLabel -> {"y", "z"}, 
+               PlotRange -> {-25, 25}, PlotStyle -> Thick, 
+               ImageSize -> {275, 275}], 
+              Plot3D[$CellContext`FPartialYX, {$CellContext`x, -10, 
+                10}, {$CellContext`y, -10, 10}, AxesLabel -> Automatic, Mesh -> 
+               None, ColorFunction -> "DarkRainbow", 
+               ImageSize -> {275, 275}]}]}}, Frame -> All]], 1.2], 
+      "Specifications" :> {{{$CellContext`XorY$$, "y=c", "Constent:"}, {
+         "x=c", "y=c"}, ControlType -> 
+         Setter}, {{$CellContext`c$$, 0, "c"}, -10, 10, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{1535., {432., 439.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.825319154982136*^9, 3.825319164740097*^9}, 
+   3.8253379805549965`*^9, {3.825338441897915*^9, 3.82533846878447*^9}, 
+   3.825339002521882*^9, 3.8253391963775225`*^9, 3.825339345072028*^9, 
+   3.825339494554961*^9, {3.8253396158709726`*^9, 3.825339632801434*^9}, {
+   3.825339705754016*^9, 3.8253397191721606`*^9}, 3.8253399281850967`*^9, 
+   3.825374107066036*^9, 3.8253744576304893`*^9, 3.825375371505369*^9, 
+   3.825375568953268*^9, {3.8253773699972553`*^9, 3.8253773816512003`*^9}, {
+   3.825377417568568*^9, 3.8253774698780828`*^9}, 3.8253775389163084`*^9, {
+   3.825378178829033*^9, 3.825378184518828*^9}, {3.825378284685284*^9, 
+   3.825378349919178*^9}, {3.825378418266532*^9, 3.825378439806841*^9}, 
+   3.825378826961866*^9, 3.82537894442657*^9, 3.825379046523155*^9, 
+   3.825380039028315*^9, 3.825387728067932*^9, {3.8253878115761003`*^9, 
+   3.8253878213820143`*^9}, {3.8253878684738393`*^9, 3.825387900758829*^9}, 
+   3.825388021344942*^9, 3.8253881096097083`*^9, 3.8253882593515673`*^9, 
+   3.8253882940077057`*^9, 3.8253883894448104`*^9, 3.8253885209796195`*^9, {
+   3.82538857949294*^9, 3.825388599674029*^9}, 3.8253887210801516`*^9, 
+   3.8253965493991714`*^9, {3.825402868305026*^9, 3.825402884561178*^9}, 
+   3.8254029182472324`*^9, {3.825403301298715*^9, 3.8254033260382833`*^9}, 
+   3.8270213557049637`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"0adba6dd-d1cf-4110-bab6-ed727a37a627"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"SlideShow",
+WindowSize->{1858, 1037},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingPageRange->{Automatic, Automatic},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 14, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d1f0e3a7-ab97-430c-8e3f-0fcbac25600c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 175, 3, 107, "Title",ExpressionUUID->"23c09463-3e50-4c9e-82cd-b68731f513f7"],
+Cell[CellGroupData[{
+Cell[780, 29, 231, 4, 73, "Section",ExpressionUUID->"cf54bf30-1e8f-4f08-ac17-cd00e123c1f8"],
+Cell[1014, 35, 603, 13, 34, "Input",ExpressionUUID->"fc204012-06c4-4581-9986-dd13edc6527d"],
+Cell[CellGroupData[{
+Cell[1642, 52, 564, 11, 32, "Input",ExpressionUUID->"b5bc4b08-035d-42fb-b017-bf0b92838395"],
+Cell[2209, 65, 406, 7, 36, "Output",ExpressionUUID->"8229a510-4726-4771-b033-7ef78d31ba3c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2652, 77, 447, 9, 32, "Input",ExpressionUUID->"a25d0948-c8f3-44cd-8e3a-9c3f18d9e0b5"],
+Cell[3102, 88, 462, 9, 36, "Output",ExpressionUUID->"7b07e806-3a9a-40f9-ba8f-c5b2126332d0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3601, 102, 313, 7, 32, "Input",ExpressionUUID->"fda4ea9c-2d0f-4b58-ad42-26d5c91dd6c6"],
+Cell[3917, 111, 424, 9, 38, "Output",ExpressionUUID->"fee6e5e4-2ea4-4bb4-830c-051d80e4ed48"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4378, 125, 324, 7, 32, "Input",ExpressionUUID->"92f15e01-a166-4095-ad89-68da2716af83"],
+Cell[4705, 134, 382, 7, 36, "Output",ExpressionUUID->"7955ef49-eedc-478b-a083-54ce91cf8cb4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5136, 147, 204, 4, 73, "Section",ExpressionUUID->"dd1fbf42-19ba-4dbb-9af2-be8fe85deb76"],
+Cell[CellGroupData[{
+Cell[5365, 155, 15578, 324, 781, "Input",ExpressionUUID->"d0697673-ec4d-4073-a6e0-bc4f37052e49"],
+Cell[20946, 481, 6715, 128, 892, "Output",ExpressionUUID->"0adba6dd-d1cf-4110-bab6-ed727a37a627"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
