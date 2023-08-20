@@ -1,0 +1,12 @@
+Image can be thought of as mathematical functions
+Color images are vector functions
+Digital images are discrete functions and have a finite range and domain
+While capturing image we do sampling and quantization
+For computation images should be converted to float range of [0 1]
+Adding/Blending images
+Subtracting images (subtraction is order depended)
+Adding noise like Gaussian or Normal noise
+Noise is just and random function with some specified distribution
+We can specify noise magnitude with respect to image range with floating number of range [0 1]
+Loading and displaying images in Matlab
+Cropping images
